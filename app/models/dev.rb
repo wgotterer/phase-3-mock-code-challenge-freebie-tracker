@@ -12,10 +12,13 @@ def recieved_one?(item_name)
   end
 end
 
-def give_away(dev, freebie)
-dev.freebies.map do |freebie|
-    freebie.dev_id = dev.dev_id
-end
+def give_away(newDev, freebie)
+  if freebie.dev == self
+    freebie.update(dev: newDev)
+  end
 end
 
 end
+
+
+# rick.freebies.first.dev_id = 2
